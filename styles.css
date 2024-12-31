@@ -1,0 +1,447 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: bisque;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #37160C;
+    color: #F4A73D;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #F4A73D;
+    font-size: 18px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #F4A73D;
+}
+
+
+.image-gallery {
+    margin: 3%;
+    border-radius: 5px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f7b75d;
+}
+
+.image-gallery h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.image-gallery h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+.content-container {
+    background-color: #f7b75d;
+    border-radius: 5px;
+    margin: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+}
+
+.content-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-content p{
+    margin-top: 2%;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+
+/* Faculty Section  */
+
+.faculty-page {
+    margin: 3%;
+    border-radius: 5px;
+    padding: 40px 20px;
+    background-color: #ebcfa8;
+}
+
+.department-section {
+    margin-bottom: 40px;
+}
+
+.department-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faculty-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.faculty-table th, .faculty-table td {
+    padding: 15px;
+    border-bottom: 1px solid #000000;
+}
+
+.faculty-table th {
+    background-color: #F4A73D;
+}
+
+.faculty-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.faculty-table td img {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Contact Page Styles */
+.contact-section {
+    padding: 40px 20px;
+    background-color: bisque;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Contact Person Styles */
+.contact-person {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: bisque;
+    border-radius: 10px;
+    box-shadow: 2px 4px 10px #37160C;
+    padding: 20px;
+}
+
+.contact-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #37160C;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #37160C;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+/* Google Form Button Styles */
+.google-form-container {
+    margin: 30px 0;
+}
+
+.btn-google-form {
+    display: inline-block;
+    margin-top: 2%;
+    padding: 12px 20px;
+    background-color: #37160C;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-google-form:hover {
+    background-color: #37160C;
+}
+
+
+/* Gallery section */
+.gall img{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 250px;
+    margin-top: 250px;
+}
+
+/* Classes Section */
+
+.classes-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: bisque;
+    margin-bottom: 10%;
+}
+
+.classes-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.class-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.class-button {
+    background-color: #37160C;
+    color: white;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.class-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Class 5 Page Styles */
+.class-section {
+    margin: 5%;
+    border-radius: 5px;
+    padding: 40px 20px;
+    background-color: bisque;
+}
+
+.class-section h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.achievements-section,
+.notes-section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: F4A73D;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .5);
+    max-width: 800px;
+
+}
+
+.achievements-section ul,
+.notes-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.achievements-section h3,
+.notes-section h3 {
+    color: #37160C;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.notes-section p {
+    font-size: 16px;
+}
+
+.notes-dropdown {
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px solid #F4A73D;
+    font-size: 16px;
+}
+
+.notes-content {
+    margin-top: 20px;
+}
+
+.notes-content h4 {
+    font-size: 24px;
+    color: #37160C;
+}
+
+.notes-content ul {
+    padding-left: 20px;
+    list-style-type: circle;
+}
+
+
+
+footer {
+    background-color: #37160C;
+    color: #F4A73D;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-address,
+.footer-map {
+    width: 45%;
+}
+
+.footer-address h3,
+.footer-map h3 {
+    margin-bottom: 15px;
+}
+
+.footer-address p {
+    margin: 5px 0;
+}
+
+.footer-map iframe {
+    border: 0;
+    width: 100%;
+    height: 250px;
+}
+
+footer p a{
+    text-decoration: none;
+    color: #ebcfa8;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #37160C;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.showing {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-address,
+    .footer-map {
+        width: 100%;
+        margin-bottom: 20px;
+}   
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-container.reverse {
+        flex-direction: column;
+    }
+
+    .image-content img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .faculty-table th, .faculty-table td {
+        padding: 10px;
+    }
+
+    .faculty-image {
+        width: 40px;
+        height: 60px;
+        border-radius: 10px;
+    }
+    .btn-google-form {
+
+        margin-top: 5%;
+    }
+
+    .class-buttons-container {
+        grid-template-columns: 1fr;
+    }
+
+}

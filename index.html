@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUDDHANKA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="logo">
+            <h1>BUDDHANKA</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="faculty.html">Faculty</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+        <div class="menu-toggle">☰</div>
+    </header>
+    <!-- GALLARY SECTION -->
+    <section class="image-gallery">
+        <h1>BUDDHANKA</h1>
+        <h2>Where Mind Is Fearless</h2>
+        <div class="gallery-grid">
+            <img src="Image/Main/image1.jpg" alt="Gallery Image 1">
+            <img src="Image/Main/image2.png" alt="Gallery Image 2">
+            <img src="Image/Main/image3.jpg" alt="Gallery Image 3">
+            <img src="Image/Main/image4.jpg" alt="Gallery Image 4">
+        </div>
+    </section>
+
+    <!-- MAIN SECTION -->
+
+    <section class="about-institution">
+        <div class="content-container">
+            <div class="text-content">
+                <h3>About the Institution</h3>
+                <p>BUDDHANKA Institute, established in 2022, is a progressive educational institution that offers a comprehensive learning experience from classes 6 to 12. It is dedicated to providing quality education in a nurturing environment. For students from classes 6 to 10, the institute offers a full range of subjects, ensuring a balanced curriculum that promotes academic excellence and holistic development. From classes 11 and 12, BUDDHANKA specializes in Commerce and Arts streams, helping students explore their career paths in fields like economics, business studies, history, and political science. The faculty comprises well-qualified and experienced teachers who are committed to nurturing students' academic potential and personal growth. In addition to the core academic curriculum, the institute offers computer classes to equip students with essential digital skills, which are increasingly vital in today’s tech-driven world. Moreover, BUDDHANKA offers spoken English classes to enhance communication skills, preparing students for global opportunities and helping them gain confidence in their interactions. BUDDHANKA strives to create a dynamic and inclusive educational environment where every student is encouraged to excel. With its dedicated approach to both academic and extracurricular development, the institute aims to shape future leaders and professionals.</p>
+            </div>
+            <div class="image-content">
+                <img src="Image/buddhanka-logo.png" alt="About the Institution">
+            </div>
+        </div>
+    </section>
+
+    <!-- From the Head's Desk Section -->
+    <section class="from-head">
+        <div class="content-container reverse">
+            <div class="text-content">
+                <h3>From the Head's Desk</h3>
+                <p>As the founder of "BUDDHANKA" , my aim toward students is to create an environment that supports their personal, academic, and social development. 
+
+                    Ensure Quality Education: Provide a curriculum and resources that help students achieve academic success and reach their full potential.
+                    
+                    Promote Personal Growth: Encourage the development of critical thinking, creativity, leadership skills, and emotional intelligence.
+                    
+                    Foster a Safe and Inclusive Environment: Maintain a space where students feel valued, respected, and safe to express themselves without fear of discrimination or harassment.
+                    
+                    Support Holistic Development: Offer extracurricular activities, sports, and wellness programs that help students grow in areas outside of academics.
+                    
+                    Prepare for the Future: Equip students with the necessary skills, knowledge, and values to succeed in higher education or their careers, and contribute meaningfully to society.
+                    
+                    Ultimately, "BUDDHANKA" ensures students' success both in the present and in their future .</p>
+            </div>
+            <div class="image-content">
+                <img src="Image/Main/head.jpg" alt="From the Head's Desk">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER SECTION -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-address">
+                <h3>Contact Us</h3>
+                <p>BUDDHANKA Address</p>
+                <p>Baitaliki Apartment, Uptop  Kalatra, <br>
+                    Rahara Station Road, PIN- 700118</p>
+                <p>Phone: 9163533312/9007057712</p>
+            </div>
+            <div class="footer-map">
+                <h3>Our Location</h3>
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200.95645653099547!2d88.37930510719761!3d22.724200800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89b9384ae814f%3A0x1eacc4aebb16131d!2sKalatra%20Biye%20Bari!5e1!3m2!1sen!2sin!4v1729861767088!5m2!1sen!2sin"
+                    width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        
+        <p>Developed by Nishanka Das  <a href="https://www.linkedin.com/in/nishanka-das/">(Contact)</a></p>
+    </footer>
+
+    <!-- Add your content here -->
+
+    <!-- Script moved to the end of the body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navUl = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', () => {
+                navUl.classList.toggle('showing');
+            });
+        });
+    </script>
+</body>
+</html>
