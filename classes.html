@@ -24,19 +24,61 @@
     </header>
 
     <!-- Classes Section -->
-    <section class="classes-section">
-        <h2>Select Your Class</h2>
-        <div class="class-buttons-container">
-            <a href="class5.html" class="class-button">Class 5</a>
-            <a href="class6.html" class="class-button">Class 6</a>
-            <a href="class7.html" class="class-button">Class 7</a>
-            <a href="class8.html" class="class-button">Class 8</a>
-            <a href="class9.html" class="class-button">Class 9</a>
-            <a href="class10.html" class="class-button">Class 10</a>
-            <a href="class11.html" class="class-button">Class 11</a>
-            <a href="class12.html" class="class-button">Class 12</a>
-        </div>
-    </section>
+        <!-- Dynamic Class Selection Section -->
+    <div class="page-center">
+  <section class="classes-section">
+  <h2 class="section-title">Select Your Subject, Board & Class</h2>
+
+  <div class="dropdown-container">
+    <div class="dropdown-group">
+      <label for="subject">Subject</label>
+      <select id="subject" onchange="populateBoards()">
+        <option value="">--Select Subject--</option>
+        <option value="history">History</option>
+        <option value="geography">Geography</option>
+        <option value="bengali">Bengali</option>
+        <option value="english">English</option>
+        <option value="science">Science</option>
+        <option value="civics">Civics</option>
+        <option value="economics">Economics</option>
+        <option value="physicalscience">Physical Science</option>
+        <option value="lifescience">Life Science</option>
+        <option value="physics">Physics</option>
+        <option value="accountancy">Accountancy</option>
+        <option value="businessstudies">Business Studies</option>
+        <option value="costandtax">Cost and Tax</option>
+        <option value="businesslaws">Business Laws</option>
+        <option value="entrepreneurship">Entrepreneurship</option>
+        <option value="philosophy">Philosophy</option>
+        <option value="computerapplication">Computer Application</option>
+        <option value="psychology">Psychology</option>
+        <option value="politicalscience">Political Science</option>
+        <option value="education">Education</option>
+        <option value="hindi">Hindi</option>
+      </select>
+    </div>
+
+    <div class="dropdown-group">
+      <label for="board">Board</label>
+      <select id="board" onchange="populateClasses()" disabled>
+        <option value="">--Select Board--</option>
+      </select>
+    </div>
+
+    <div class="dropdown-group">
+      <label for="class">Class</label>
+      <select id="class" disabled>
+        <option value="">--Select Class--</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="go-button-wrapper">
+    <button onclick="goToPage()">Go to Notes →</button>
+  </div>
+</section>
+</div>
+
 
     <!-- Reusing Footer -->
     <footer>
@@ -59,16 +101,158 @@
         <p>Developed by Nishanka Das  <a href="https://www.linkedin.com/in/nishanka-das/">(Contact)</a></p>
     </footer>
 
-    <!-- Script for Toggle Menu -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navUl = document.querySelector('nav ul');
+   <script>
+  const subjectBoardMap = {
+    history:         ["wbbse", "wbchse", "cbse", "icse", "isc"],
+    geography:       ["wbbse", "wbchse", "cbse", "icse", "isc"],
+    bengali:         ["wbbse", "wbchse", "cbse", "icse", "isc"],
+    english:         ["wbbse", "wbchse", "cbse", "icse", "isc"],
+    science:         ["wbbse", "cbse", "icse"],
+    civics:          ["cbse", "icse"],
+    economics:       ["wbchse", "cbse", "icse", "isc"],
+    physicalscience: ["wbbse", "icse"],
+    lifescience:     ["wbbse", "icse"],
+    physics:         ["wbchse", "cbse", "isc"],
+    accountancy:     ["wbchse", "cbse", "isc"],
+    businessstudies: ["wbchse", "cbse", "isc"],
+    costandtax:      ["wbchse", "cbse", "isc"],
+    businesslaws:    ["wbchse", "cbse", "isc"],
+    entrepreneurship:["wbchse", "cbse", "isc"],
+    philosophy:      ["wbchse"],
+    computerapplication: ["wbchse", "cbse", "isc"],
+    psychology:      ["wbchse", "cbse", "isc"],
+    politicalscience:["wbchse", "cbse", "isc"],
+    education:       ["wbchse"],
+    hindi:           ["cbse", "icse", "isc"]
+  };
 
-            menuToggle.addEventListener('click', () => {
-                navUl.classList.toggle('showing');
-            });
-        });
-    </script>
+  const boardClassMap = {
+    wbbse:   [7, 8, 9, 10],
+    wbchse:  [11, 12],
+    cbse:    [7, 8, 9, 10, 11, 12],
+    icse:    [7, 8, 9, 10],
+    isc:     [11, 12]
+  };
+
+  const subjectClassOverrides = {
+    science: {
+      wbbse: [7, 8],
+      cbse: [7, 8, 9, 10],
+      icse: [7, 8, 9, 10]
+    },
+    civics: {
+      cbse: [7, 8, 9, 10],
+      icse: [7, 8, 9, 10]
+    },
+    economics: {
+      wbchse: [11, 12],
+      cbse: [9, 10, 11, 12],
+      icse: [9, 10],
+      isc: [11, 12]
+    },
+    physics: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    accountancy: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    businessstudies: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    costandtax: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    businesslaws: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    entrepreneurship: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    computerapplication: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    psychology: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    },
+    politicalscience: {
+      cbse: [11, 12],
+      isc: [11, 12]
+    }
+  };
+
+  function populateBoards() {
+    const subject = document.getElementById("subject").value;
+    const boardSelect = document.getElementById("board");
+    const classSelect = document.getElementById("class");
+
+    boardSelect.innerHTML = '<option value="">--Select Board--</option>';
+    classSelect.innerHTML = '<option value="">--Select Class--</option>';
+    classSelect.disabled = true;
+
+    if (subject && subjectBoardMap[subject]) {
+      boardSelect.disabled = false;
+      subjectBoardMap[subject].forEach(board => {
+        const opt = document.createElement("option");
+        opt.value = board;
+        opt.text = board.toUpperCase();
+        boardSelect.appendChild(opt);
+      });
+    } else {
+      boardSelect.disabled = true;
+    }
+  }
+
+  function populateClasses() {
+    const subject = document.getElementById("subject").value;
+    const board = document.getElementById("board").value;
+    const classSelect = document.getElementById("class");
+
+    classSelect.innerHTML = '<option value="">--Select Class--</option>';
+
+    let classOptions = [];
+
+    if (subject && board) {
+      // Use subject-specific overrides if they exist
+      if (subjectClassOverrides[subject] && subjectClassOverrides[subject][board]) {
+        classOptions = subjectClassOverrides[subject][board];
+      } else {
+        classOptions = boardClassMap[board] || [];
+      }
+
+      classSelect.disabled = false;
+      classOptions.forEach(cls => {
+        const opt = document.createElement("option");
+        opt.value = cls;
+        opt.text = "Class " + cls;
+        classSelect.appendChild(opt);
+      });
+    } else {
+      classSelect.disabled = true;
+    }
+  }
+
+  function goToPage() {
+    const subject = document.getElementById("subject").value;
+    const board = document.getElementById("board").value;
+    const classNum = document.getElementById("class").value;
+
+    if (subject && board && classNum) {
+      const filename = `${subject}/${subject}_class_${classNum}_${board}.html`;
+      window.location.href = filename;
+    } else {
+      alert("Please select all options.");
+    }
+  }
+</script>
+
+
 </body>
 </html>
